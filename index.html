@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bernard Samuel Ekpoto — Software Engineer, Backend Engineer and Python Developer." />
+  <meta name="author" content="Bernard Samuel Ekpoto" />
+  <title>Bernard Samuel Ekpoto | Software Engineer</title>
+  <style>
+    :root{
+      --bg:#07111f;--surface:#0d1a2b;--surface2:#102238;--text:#edf4ff;
+      --muted:#9db0c8;--accent:#62a8ff;--accent2:#7c5cff;--border:#1d3552;
+      --max:1120px;--radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at 80% 0%,#142e50 0,transparent 32%),var(--bg);
+      color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,17,31,.82);
+      backdrop-filter:blur(14px);border-bottom:1px solid rgba(157,176,200,.12)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:-.03em;font-size:1.1rem}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:24px;color:var(--muted);font-size:.92rem}
+    .nav-links a:hover{color:var(--text)}
+    .menu{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}
+    section{padding:100px 0}
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:60px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+    h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.98;letter-spacing:-.065em;margin:18px 0 24px}
+    h1 span{color:var(--accent)}
+    .hero p{max-width:720px;color:var(--muted);font-size:1.12rem}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{padding:12px 19px;border-radius:11px;border:1px solid var(--border);font-weight:700;display:inline-block}
+    .btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+    .btn:hover{transform:translateY(-2px)}
+    .profile-card{background:linear-gradient(145deg,rgba(16,34,56,.95),rgba(13,26,43,.82));
+      border:1px solid var(--border);padding:28px;border-radius:var(--radius);box-shadow:0 25px 70px rgba(0,0,0,.25)}
+    .avatar{height:105px;width:105px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:2rem;font-weight:900;margin-bottom:22px}
+    .profile-card h3{font-size:1.3rem}.profile-card p{font-size:.92rem;color:var(--muted);margin-top:5px}
+    .quick{display:grid;gap:14px;margin-top:24px}.quick div{padding:14px;border:1px solid var(--border);border-radius:12px}
+    .quick strong{display:block}.quick span{color:var(--muted);font-size:.85rem}
+    .section-head{margin-bottom:38px}.section-head h2{font-size:2.2rem;letter-spacing:-.04em}
+    .section-head p{color:var(--muted);margin-top:7px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .card{background:rgba(13,26,43,.78);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+    .card p{color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .stat{padding:22px;border:1px solid var(--border);border-radius:14px;background:rgba(16,34,56,.5)}
+    .stat b{font-size:2rem}.stat span{display:block;color:var(--muted);font-size:.9rem}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:9px 13px;border-radius:999px;background:var(--surface2);border:1px solid var(--border);color:#d8e6f7;font-size:.9rem}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{display:flex;flex-direction:column;min-height:285px}
+    .project .tag{color:var(--accent);font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.1em}
+    .project h3{font-size:1.25rem;margin:10px 0}
+    .project p{color:var(--muted);font-size:.92rem}
+    .project .tech{margin-top:auto;padding-top:20px;color:#c9d9eb;font-size:.8rem}
+    .experience{display:grid;gap:16px}
+    .job{display:grid;grid-template-columns:180px 1fr;gap:25px;padding:25px 0;border-bottom:1px solid var(--border)}
+    .job:last-child{border-bottom:0}.date{color:var(--accent);font-size:.85rem;font-weight:700}
+    .job h3{font-size:1.15rem}.job h4{color:var(--muted);font-weight:500;margin:3px 0 10px}
+    .job ul{padding-left:18px;color:var(--muted)}.job li{margin:5px 0}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-card{display:flex;align-items:center;gap:14px;padding:18px;border:1px solid var(--border);border-radius:13px;background:var(--surface)}
+    .icon{height:40px;width:40px;border-radius:10px;background:var(--surface2);display:grid;place-items:center}
+    footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.85rem}
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:20px;background:var(--bg);flex-direction:column}
+      .nav-links.open{display:flex}.menu{display:block}
+      .hero-grid,.about,.contact{grid-template-columns:1fr}.projects{grid-template-columns:1fr}
+      .hero{min-height:auto;padding-top:130px}.job{grid-template-columns:1fr;gap:5px}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">BS<span>.</span></a>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Software Engineer · Backend Engineer</div>
+      <h1>Building reliable <span>software</span> for real-world problems.</h1>
+      <p>
+        I'm Bernard Samuel Ekpoto, a Software Engineer with 5 years of experience
+        building backend systems, APIs and business applications with PHP/Laravel and Python.
+        I enjoy turning complex requirements into practical, scalable solutions.
+      </p>
+      <div class="buttons">
+        <!-- Replace these placeholders with your real profiles -->
+        <a class="btn primary" href="https://github.com/ekpotosammuel" target="_blank">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/ekpotosamuel" target="_blank">LinkedIn ↗</a>
+        <a class="btn" href="mailto:ekpotosammuel1@gmail.com">Contact Me</a>
+      </div>
+    </div>
+    <aside class="profile-card">
+      <div class="avatar">BS</div>
+      <h3>Backend-focused Engineer</h3>
+      <p>PHP · Laravel · Python · FastAPI · Django</p>
+      <div class="quick">
+        <div><strong>5+ Years</strong><span>Professional experience</span></div>
+        <div><strong>API & Systems</strong><span>Backend architecture & integrations</span></div>
+        <div><strong>Engineering Background</strong><span>B.Eng. Mechanical Engineering</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head"><h2>About me</h2><p>Engineer by training. Software engineer by experience.</p></div>
+    <div class="about">
+      <div class="card">
+        <p>
+          I’m a Software Engineer and Backend Engineer focused on designing and developing
+          APIs, financial systems, identity-verification workflows, e-commerce platforms and
+          business applications. My main server-side technologies are PHP/Laravel and Python,
+          with experience across FastAPI and Django.
+        </p><br>
+        <p>
+          My engineering journey has exposed me to research, facilities, identity verification,
+          fintech, invoicing and startup environments. I’m continuously exploring new technologies
+          and looking for opportunities to solve meaningful problems at a larger scale.
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5+</b><span>Years in software engineering</span></div>
+        <div class="stat"><b>2</b><span>Core backend ecosystems: PHP & Python</span></div>
+        <div class="stat"><b>API</b><span>Design, integration & deployment</span></div>
+        <div class="stat"><b>AI</b><span>Computer vision & verification projects</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head"><h2>Technical toolkit</h2><p>Technologies I use to build and ship software.</p></div>
+    <div class="card skills">
+      <span class="skill">PHP</span><span class="skill">Laravel</span><span class="skill">Python</span>
+      <span class="skill">FastAPI</span><span class="skill">Django</span><span class="skill">MySQL</span>
+      <span class="skill">PostgreSQL</span><span class="skill">SQLite</span><span class="skill">Supabase</span>
+      <span class="skill">REST APIs</span><span class="skill">Docker</span><span class="skill">Nginx</span>
+      <span class="skill">AWS EC2</span><span class="skill">DigitalOcean</span><span class="skill">Git/GitHub</span>
+      <span class="skill">JavaScript</span><span class="skill">jQuery</span><span class="skill">DataTables</span>
+      <span class="skill">Bootstrap</span><span class="skill">Tailwind CSS</span><span class="skill">Flutter</span>
+      <span class="skill">API Integrations</span><span class="skill">Webhooks</span><span class="skill">CI/CD</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head"><h2>Selected work</h2><p>A snapshot of the kinds of systems I build.</p></div>
+    <div class="projects">
+      <article class="card project">
+        <span class="tag">Fintech · Backend</span><h3>Financial & Payment Systems</h3>
+        <p>Backend services for payment scheduling, employee payment processing, billing, transaction verification and financial workflows.</p>
+        <div class="tech">Laravel · MySQL · Paystack · Budpay · Providus · Webhooks</div>
+      </article>
+      <article class="card project">
+        <span class="tag">Identity · AI</span><h3>Identity Verification</h3>
+        <p>Identity verification workflows involving document processing, face matching, liveness concepts and confidence scoring for KYC use cases.</p>
+        <div class="tech">Python · Computer Vision · APIs · Laravel</div>
+      </article>
+      <article class="card project">
+        <span class="tag">Business Software</span><h3>Invoicing & Tax Platforms</h3>
+        <p>Business applications supporting invoicing, supplier information, tax-related workflows, PDF generation, QR codes and data processing.</p>
+        <div class="tech">Laravel · PostgreSQL · Docker · Nginx</div>
+      </article>
+      <article class="card project">
+        <span class="tag">Backend · APIs</span><h3>API Platforms</h3>
+        <p>RESTful backend services and integrations with external providers, authentication, rate limiting, scheduled jobs and asynchronous workflows.</p>
+        <div class="tech">PHP · Python · FastAPI · Django</div>
+      </article>
+      <article class="card project">
+        <span class="tag">Data · Automation</span><h3>Data Processing Systems</h3>
+        <p>Data import, CSV processing, record deduplication, bulk search and reporting workflows designed for operational teams.</p>
+        <div class="tech">Python · Pandas · MySQL · PostgreSQL</div>
+      </article>
+      <article class="card project">
+        <span class="tag">DevOps</span><h3>Deployment & Infrastructure</h3>
+        <p>Containerized Laravel and Python applications deployed with Docker, Nginx and cloud infrastructure, including production troubleshooting.</p>
+        <div class="tech">Docker · Linux · Nginx · AWS · DigitalOcean</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head"><h2>Experience</h2><p>Engineering across multiple industries and product environments.</p></div>
+    <div class="card experience">
+      <div class="job">
+        <div class="date">5+ YEARS</div>
+        <div><h3>Software Engineer / Backend Engineer</h3><h4>Professional Software Development</h4>
+          <ul><li>Build and maintain backend services using Laravel, PHP, Python, FastAPI and Django.</li>
+          <li>Develop REST APIs and integrate payment, identity, communication and business service providers.</li>
+          <li>Design database structures, migrations, queries and reporting workflows for production applications.</li>
+          <li>Deploy, troubleshoot and maintain applications using Docker, Linux, Nginx and cloud infrastructure.</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="date">INDUSTRIES</div>
+        <div><h3>Cross-functional Engineering</h3><h4>Research · Facilities · Identity · E-commerce · Startups · Fintech</h4>
+          <p style="color:var(--muted)">Experience working on products and internal systems across different business domains, adapting quickly to new requirements and technologies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head"><h2>Let’s build something useful.</h2><p>Open to software engineering opportunities and challenging backend projects.</p></div>
+    <div class="contact">
+      <a class="contact-card" href="mailto:ekpotosammuel1@gmail.com"><span class="icon">✉</span><div><strong>Email</strong><small style="display:block;color:var(--muted)">Contact me</small></div></a>
+      <a class="contact-card" href="https://github.com/ekpotosammuel" target="_blank"><span class="icon">⌘</span><div><strong>GitHub</strong><small style="display:block;color:var(--muted)">View my code and projects</small></div></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/ekpotosamuel" target="_blank"><span class="icon">in</span><div><strong>LinkedIn</strong><small style="display:block;color:var(--muted)">Connect professionally</small></div></a>
+      <a class="contact-card" href="#home"><span class="icon">↑</span><div><strong>Back to top</strong><small style="display:block;color:var(--muted)">Return to the introduction</small></div></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> Bernard Samuel Ekpoto. Built with HTML & CSS and deployed with GitHub Pages.</div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  function toggleMenu(){document.getElementById("navLinks").classList.toggle("open")}
+  document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+</script>
+</body>
+</html>
